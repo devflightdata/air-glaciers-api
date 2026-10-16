@@ -1,6 +1,6 @@
-# Air Glaciers API (AGV / AGV) - Flight Tracking, Schedules, Routes & Fleet
+# Air Glaciers API (- / AGV) - Flight Tracking, Schedules, Routes & Fleet
 
-Track **Air Glaciers** (IATA `AGV`, ICAO `AGV`, Switzerland) flights programmatically - real-time status and positions, live schedules, routes and fleet data - through a single [AirLabs API](https://airlabs.co/) integration.
+Track **Air Glaciers** (IATA `-`, ICAO `AGV`, Switzerland) flights programmatically - real-time status and positions, live schedules, routes and fleet data - through a single [AirLabs API](https://airlabs.co/) integration.
 
 This repo has ready-to-run examples (cURL, Python, Node.js) that pull Air Glaciers data by its airline code `AGV`. Change the code and the same examples work for any of the 1,000+ airlines AirLabs covers.
 
