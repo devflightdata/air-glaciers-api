@@ -4,8 +4,8 @@ import requests
 API_KEY = "YOUR_API_KEY"
 BASE = "https://airlabs.co/api/v9"
 
-def live_flights(airline_iata="AGV"):
-    r = requests.get(f"{BASE}/flights", params={"airline_iata": airline_iata, "api_key": API_KEY})
+def live_flights(airline_icao="AGV"):
+    r = requests.get(f"{BASE}/flights", params={"airline_icao": airline_icao, "api_key": API_KEY})
     return r.json().get("response", [])
 
 if __name__ == "__main__":
