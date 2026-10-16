@@ -3,7 +3,7 @@ const API_KEY = "YOUR_API_KEY";
 const BASE = "https://airlabs.co/api/v9";
 
 async function liveFlights(airlineIata = "AGV") {
-  const res = await fetch(`${BASE}/flights?airline_iata=${airlineIata}&api_key=${API_KEY}`);
+  const res = await fetch(`${BASE}/flights?airline_icao=${airlineIata}&api_key=${API_KEY}`);
   const data = await res.json();
   return data.response || [];
 }
