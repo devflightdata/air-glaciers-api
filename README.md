@@ -11,18 +11,18 @@ This repo has ready-to-run examples (cURL, Python, Node.js) that pull Air Glacie
 
 | Data | AirLabs endpoint | Filter |
 | --- | --- | --- |
-| Live flights & positions | [Real-Time Flights](https://airlabs.co/docs/flights) | `airline_iata=AGV` |
-| Live departures / arrivals | [Schedules](https://airlabs.co/docs/schedules) | `airline_iata=AGV` |
-| Single flight status | [Flight Info](https://airlabs.co/docs/flight) | `flight_iata=AGV...` |
-| Route network | [Routes](https://airlabs.co/docs/routes) | `airline_iata=AGV` |
-| Fleet (aircraft) | [Fleets](https://airlabs.co/docs/fleets) | `airline_iata=AGV` |
-| Airline record (codes, callsign) | [Airlines DB](https://airlabs.co/docs/airlines) | `iata_code=AGV` |
+| Live flights & positions | [Real-Time Flights](https://airlabs.co/docs/flights) | `airline_icao=AGV` |
+| Live departures / arrivals | [Schedules](https://airlabs.co/docs/schedules) | `airline_icao=AGV` |
+| Single flight status | [Flight Info](https://airlabs.co/docs/flight) | `flight_icao=AGV...` |
+| Route network | [Routes](https://airlabs.co/docs/routes) | `airline_icao=AGV` |
+| Fleet (aircraft) | [Fleets](https://airlabs.co/docs/fleets) | `airline_icao=AGV` |
+| Airline record (codes, callsign) | [Airlines DB](https://airlabs.co/docs/airlines) | `icao_code=AGV` |
 
 ## Quickstart
 
 ### cURL
 ```bash
-curl "https://airlabs.co/api/v9/flights?airline_iata=AGV&api_key=YOUR_API_KEY"
+curl "https://airlabs.co/api/v9/flights?airline_icao=AGV&api_key=YOUR_API_KEY"
 ```
 
 ### Python
@@ -33,7 +33,7 @@ API_KEY = "YOUR_API_KEY"
 BASE = "https://airlabs.co/api/v9"
 
 flights = requests.get(f"{BASE}/flights", params={
-    "airline_iata": "AGV",
+    "airline_icao": "AGV",
     "api_key": API_KEY,
 }).json()["response"]
 
@@ -47,7 +47,7 @@ for f in flights:
 const API_KEY = "YOUR_API_KEY";
 const BASE = "https://airlabs.co/api/v9";
 
-const res = await fetch(`${BASE}/flights?airline_iata=AGV&api_key=${API_KEY}`);
+const res = await fetch(`${BASE}/flights?airline_icao=AGV&api_key=${API_KEY}`);
 const { response: flights } = await res.json();
 flights.forEach(f => {
   const ident = f.flight_iata ?? f.flight_icao ?? f.reg_number ?? "?";
@@ -61,9 +61,8 @@ Placeholder values. See the [Schedules API docs](https://airlabs.co/docs/schedul
 
 ```json
 {
-  "airline_iata": "AGV",
   "airline_icao": "AGV",
-  "flight_iata": "AGVxxxx",
+  "flight_icao": "AGVxxxx",
   "dep_iata": "XXX",
   "dep_time": "YYYY-MM-DD HH:MM",
   "dep_time_utc": "YYYY-MM-DD HH:MM",
